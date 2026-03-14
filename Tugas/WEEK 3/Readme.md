@@ -1,6 +1,7 @@
 Week 3 - Database, Migration & model
 
 Screenshot Migration:
+
 ![alt text](image.png)
 
 
