@@ -17,7 +17,7 @@
 
                     <div class="mb-4">
                         <strong class="block text-sm font-medium text-gray-700 dark:text-gray-300">Quantity:</strong>
-                        <p class="mt-1 text-lg">{{ $product->quantity }}</p>
+                        <p class="mt-1 text-lg">{{ $product->qty }}</p>
                     </div>
 
                     <div class="mb-4">
