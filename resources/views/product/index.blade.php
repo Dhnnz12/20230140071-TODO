@@ -33,16 +33,18 @@
                         <table class="w-full text-left table-auto min-w-max">
                             <thead>
                                 <tr>
+                                    <th class="p-4 border-b border-gray-200 dark:border-gray-700">No.</th>
                                     <th class="p-4 border-b border-gray-200 dark:border-gray-700">Name</th>
                                     <th class="p-4 border-b border-gray-200 dark:border-gray-700">Quantity</th>
                                     <th class="p-4 border-b border-gray-200 dark:border-gray-700">Price</th>
-                                    <th class="p-4 border-b border-gray-200 dark:border-gray-700">User ID</th>
+                                    <th class="p-4 border-b border-gray-200 dark:border-gray-700">Owner</th>
                                     <th class="p-4 border-b border-gray-200 dark:border-gray-700">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse($products as $product)
                                     <tr class="border-b border-gray-200 dark:border-gray-700">
+                                        <td class="p-4">{{ $loop->iteration }}</td>
                                         <td class="p-4">{{ $product->name }}</td>
                                         <td class="p-4">{{ $product->qty }}</td>
                                         <td class="p-4">Rp {{ number_format($product->price, 2, ',', '.') }}</td>
@@ -76,7 +78,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class="p-4 text-center text-gray-500">No products found.</td>
+                                        <td colspan="6" class="p-4 text-center text-gray-500">No products found.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

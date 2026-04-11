@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <strong class="block text-sm font-medium text-gray-700 dark:text-gray-300">User:</strong>
+                        <strong class="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner:</strong>
                         <p class="mt-1 text-lg">{{ $product->user->name ?? $product->user_id }}</p>
                     </div>
 
