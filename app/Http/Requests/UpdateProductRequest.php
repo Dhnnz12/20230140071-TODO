@@ -32,15 +32,15 @@ class UpdateProductRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'The product name is required.',
-            'qty.required' => 'The product quantity is required.',
-            'qty.integer' => 'The product quantity must be a valid integer.',
-            'qty.min' => 'The product quantity cannot be less than 0.',
-            'price.required' => 'The product price is required.',
-            'price.numeric' => 'The product price must be a valid number.',
-            'price.min' => 'The product price cannot be less than 0.',
-            'user_id.required' => 'Please select the user/owner for this product.',
-            'user_id.exists' => 'The selected user is invalid.',
+            'name.required' => 'Nama produk wajib diisi.',
+            'qty.required' => 'Kuantitas wajib diisi.',
+            'qty.integer' => 'Kuantitas harus berupa angka bulat.',
+            'qty.min' => 'Kuantitas tidak boleh kurang dari 0.',
+            'price.required' => 'Harga produk wajib diisi.',
+            'price.numeric' => 'Harga produk harus berupa angka.',
+            'price.min' => 'Harga produk tidak boleh kurang dari 0.',
+            'user_id.required' => 'Pemilik produk wajib dipilih.',
+            'user_id.exists' => 'Pemilih yang dipilih tidak valid.',
         ];
     }
 }
