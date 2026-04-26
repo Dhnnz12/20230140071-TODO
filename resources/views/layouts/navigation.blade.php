@@ -18,9 +18,14 @@
                     <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.*')">
                         {{ __('Products') }}
                     </x-nav-link>
+                    @can('admin-only')
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.*')">
+                        {{ __('Category') }}
+                    </x-nav-link>
+                    @endcan
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-    {{ __('About Me') }}
-</x-nav-link>
+                        {{ __('About Me') }}
+                    </x-nav-link>
                 </div>
             </div>
 

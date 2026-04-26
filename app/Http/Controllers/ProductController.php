@@ -21,8 +21,9 @@ class ProductController extends Controller
     public function create()
     {
         $users = User::orderBy('name')->get();
+        $categories = \App\Models\Category::orderBy('name')->get();
 
-        return view('product.create', compact('users'));
+        return view('product.create', compact('users', 'categories'));
     }
 
     public function store(StoreProductRequest $request)
@@ -46,8 +47,9 @@ class ProductController extends Controller
         Gate::authorize('update', $product);
         
         $users = User::orderBy('name')->get();
+        $categories = \App\Models\Category::orderBy('name')->get();
 
-        return view('product.edit', compact('product', 'users'));
+        return view('product.edit', compact('product', 'users', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, $id)

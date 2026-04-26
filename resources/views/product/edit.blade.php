@@ -82,7 +82,7 @@
                             </div>
 
                             <!-- Owner Input -->
-                            <div class="col-span-2 relative group">
+                            <div class="relative group">
                                 <label for="user_id" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 transition-colors group-focus-within:text-red-500 dark:group-focus-within:text-red-400">Owner / Assigner <span class="text-rose-500">*</span></label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
@@ -100,6 +100,29 @@
                                     </div>
                                 </div>
                                 @error('user_id') 
+                                    <p class="text-rose-500 text-sm mt-2 flex items-center font-medium animate-pulse"><svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>{{ $message }}</p> 
+                                @enderror
+                            </div>
+
+                            <!-- Category Input -->
+                            <div class="relative group">
+                                <label for="category_id" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 transition-colors group-focus-within:text-orange-600 dark:group-focus-within:text-orange-400">Kategori <span class="text-rose-500">*</span></label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>
+                                    </div>
+                                    <select name="category_id" id="category_id" 
+                                        class="block w-full pl-12 pr-10 py-3 appearance-none bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-300 {{ $errors->has('category_id') ? 'border-rose-500 ring-1 ring-rose-500' : '' }}" required>
+                                        <option value="" disabled>-- Pilih Kategori --</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                @error('category_id') 
                                     <p class="text-rose-500 text-sm mt-2 flex items-center font-medium animate-pulse"><svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>{{ $message }}</p> 
                                 @enderror
                             </div>
